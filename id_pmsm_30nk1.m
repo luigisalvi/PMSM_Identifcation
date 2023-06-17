@@ -21,9 +21,10 @@ for d = 1:length(datasets)
 end
 close all 
 
+%Plotting fit stats
 fit_plot(length(datasets), vel_fit, torque_fit);
 
-
+%% Functions 
 function  fit= model_identification(datasets, dIndex)
 %Creo una cartella per conservare le immagini
 mkdir("FiguresNEW/" + datasets(dIndex));
@@ -80,8 +81,7 @@ ord_Max = 30;
     FPE(k) = fpe(m1); %final prediction error
     AIC(k) = aic(m1);%Akaike information criterion 
     MDL(k) = log(nt)*(k/nt) + log(Jpred_train(k)); %Minimum description length
-
-
+    
 end
 
 %%Plotting
